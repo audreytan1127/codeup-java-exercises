@@ -49,18 +49,19 @@ public class ControlFlowExercises {
 
 //  EXERCISE 2 FIZZBUZZ
 //        for(int i=0;i<100;i++){
-//            if(i%3==0){
-//                System.out.println("Fizz");
+//            if(i%3==0 && i%5==0){
+//                System.out.println("FizzBuzz");
 //            } else if (i%5==0) {
 //                System.out.println("Buzz");
-//            } else if (i%3==0 && i%5==0) {
-//                System.out.println("FizzBuzz");
+//            } else if (i%3==0) {
+//                System.out.println("Fizz");
 //            } else {
 //                System.out.println(i);
 //            }
 //        }
 
 //  EXERCISE 3 TABLE OF POWERS
+        //  String toContinue = "y";
 //        System.out.println("Please enter an integer to go up to.");
 //        int userInputInteger = scanner.nextInt();
 //            System.out.println("  number   | squared |   cubed  ");
@@ -70,7 +71,9 @@ public class ControlFlowExercises {
 //        int userInputCubed = i*i*i;
 //            System.out.printf("  %d        | %d       | %d       %n", i, userInputSquared, userInputCubed);
 //        }
-
+//        System.out.println("would you like to continue? (y/n)");
+//        toContinue = scanner.next();
+//        System.out.println();
 
 //  EXERCISE 4 CHANGE TO LETTER GRADE
         String userConfirmation = "y";
