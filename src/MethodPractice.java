@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MethodPractice {
 
     /*
@@ -85,9 +87,15 @@ public class MethodPractice {
 
         // TODO: Write a method, returnName, that returns the string of your name.
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println(myName());
         System.out.println(returnLongerString("this is a long string.", "this is an even longer string!"));
         System.out.println(canBeHalved(16));
+        System.out.println(addition(4, 5));
+        System.out.println(subtraction(17, 4));
+        System.out.println(multiplication(33, 2));
+        System.out.println(division(333, 3));
+        System.out.println(modulus(8, 6));
     }
     public static String myName(){
         String inputName = "Audrey Tan";
@@ -113,8 +121,21 @@ public class MethodPractice {
     }
 
         // TODO: !! Complete math exercises from the curriculum !!
-
-
+public static int addition(int int1, int int2){
+        return int1 + int2;
+}
+public static int subtraction(int int1, int int2){
+        return int1 - int2;
+}
+public static int multiplication (int int1, int int2){
+        return int1 * int2;
+}
+public static int division (int int1, int int2){
+        return int1 / int2;
+}
+public static int modulus (int int1, int int2){
+        return int1 % int2;
+}
         // ----------- OVERLOADING
 
     /*
