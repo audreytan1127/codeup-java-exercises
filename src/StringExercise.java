@@ -1,6 +1,6 @@
 public class StringExercise {
     public static void main(String[] args) {
-        String stringStatement =  "We don't need no education \nWe don't need no thought control";
+        String stringStatement =  "We don't need no education \n" + "We don't need no thought control";
         System.out.println(stringStatement);
 
         String quotationStatement = "Check \"this\" out! \"s inside of \"s!";
@@ -11,6 +11,7 @@ public class StringExercise {
 
         String backslashString = "I can do backslashes \\, double backslashes \\\\,\nand the amazing triple backslash \\\\\\!";
         System.out.println(backslashString);
+
     }
 }
 
