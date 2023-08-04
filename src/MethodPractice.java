@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class MethodPractice {
 
     /*
@@ -338,38 +336,38 @@ public class MethodPractice {
 //    // Roll 2 of those dice
 //    //static methods to choose random number within range (Math.random)
 
-    public static int userInputSidesOfDice() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter how many sides you would like on your pair of dice.");
-        int userAmountOfSides = scanner.nextInt();
-        return userAmountOfSides;
-    }
-public static String userConfirmRollDice(){
-        Scanner scanForConfirm = new Scanner(System.in);
-        String userConfirmation;
-    do{
-    System.out.println("Would you like to roll this pair of dice?[y/n]");
-    userConfirmation = scanForConfirm.next();
-    if(userConfirmation.equalsIgnoreCase("y")) {
-
-
-    }
-    }
-
-}
-public static void rollDice(int userAmountOfSides){
-    int min = 1;
-    int max = userInputSidesOfDice();
-    int range = max - min +1;
-    int randomNumber;
-    for(int i=0; i< 10; i++){
-        randomNumber = (int) Math.random()*range +min;
-    }
-}
-    public static void main(String[] args) {
-        System.out.println(userInputSidesOfDice());
-
-    }
+//    public static int userInputSidesOfDice() {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Please enter how many sides you would like on your pair of dice.");
+//        int userAmountOfSides = scanner.nextInt();
+//        return userAmountOfSides;
+//    }
+//public static String userConfirmRollDice(){
+//        Scanner scanForConfirm = new Scanner(System.in);
+//        String userConfirmation;
+//    do{
+//    System.out.println("Would you like to roll this pair of dice?[y/n]");
+//    userConfirmation = scanForConfirm.next();
+//    if(userConfirmation.equalsIgnoreCase("y")) {
+//
+//
+//    }
+//    }
+//
+//}
+//public static void rollDice(int userAmountOfSides){
+//    int min = 1;
+//    int max = userInputSidesOfDice();
+//    int range = max - min +1;
+//    int randomNumber;
+//    for(int i=0; i< 10; i++){
+//        randomNumber = (int) Math.random()*range +min;
+//    }
+//}
+//    public static void main(String[] args) {
+//        System.out.println(userInputSidesOfDice());
+//
+//    }
 
 
 
