@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MethodPractice {
 
     /*
@@ -336,39 +338,82 @@ public class MethodPractice {
 //    // Roll 2 of those dice
 //    //static methods to choose random number within range (Math.random)
 
-//    public static int userInputSidesOfDice() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Please enter how many sides you would like on your pair of dice.");
-//        int userAmountOfSides = scanner.nextInt();
-//        return userAmountOfSides;
-//    }
-//public static String userConfirmRollDice(){
-//        Scanner scanForConfirm = new Scanner(System.in);
-//        String userConfirmation;
-//    do{
-//    System.out.println("Would you like to roll this pair of dice?[y/n]");
-//    userConfirmation = scanForConfirm.next();
-//    if(userConfirmation.equalsIgnoreCase("y")) {
-//
-//
-//    }
-//    }
-//
+//public static int askUserForNumber(){
+//    System.out.println("Please type in the number of sides you want on your dice.");
+//    Scanner scanForNum = new Scanner(System.in);
+//   int userNum = scanForNum.nextInt();
+//    return userNum;
 //}
-//public static void rollDice(int userAmountOfSides){
+//
+//public static String chooseRandomNum(){
 //    int min = 1;
-//    int max = userInputSidesOfDice();
-//    int range = max - min +1;
-//    int randomNumber;
-//    for(int i=0; i< 10; i++){
-//        randomNumber = (int) Math.random()*range +min;
-//    }
+//    int max = askUserForNumber();
+//    int die1 = (int) (Math.random() * (max - min) + 1) +min;
+//    int die2 = (int) (Math.random() * (max - min) + 1) +min;
+//    System.out.printf("You rolled:%d%nYou rolled:%d%n",die1, die2);
+//    return "Done rolling!";
 //}
-//    public static void main(String[] args) {
-//        System.out.println(userInputSidesOfDice());
 //
+//    public static void main(String[] args) {
+//        System.out.println(chooseRandomNum());
 //    }
 
+//    //EXERCISE 5
+//    high low number guessing game
+    public static int randomNum(){
+    int randomNumber = (int) (Math.random() * (100 - 1) + 1) + 1;
+    return randomNumber;
+    }
+    public static String getUserConfirm(){
+        Scanner scanConfirm = new Scanner(System.in);
+        System.out.println("You wanna play a game?[y/n]");
+        String userConfirmPlay = scanConfirm.nextLine();
+        return userConfirmPlay;
+    }
 
+    public static String userGuessNumber() {
+        if (getUserConfirm().equalsIgnoreCase("y")) {
+            int randomNumber = randomNum();
+            System.out.println(randomNumber);
+            System.out.println("You get 10 guesses! Guess a number between 1 and 100.");
+            Scanner scanForNum = new Scanner(System.in);
+            int userNumGuess = scanForNum.nextInt();;
+            int userGuesses = 0;
+           do {
+                if(userNumGuess < randomNumber){
+                    userGuesses++;
+                    System.out.println("HIGHER!");
+                    userNumGuess = scanForNum.nextInt();
+                } else if (userNumGuess > randomNumber) {
+                    userGuesses++;
+                    System.out.println("LOWER!");
+                    userNumGuess = scanForNum.nextInt();
+                } else if(userNumGuess == randomNumber){
+                    System.out.println("Congrats! You guessed the number correctly! :D");
+                    userNumGuess = scanForNum.nextInt();
+                } else {
+                    return "You ran out of guesses!):";
+                }
+            }
+               while(userNumGuess != randomNumber && userGuesses <= 10);
+        } return "Thanks for playing!";
+    }
+
+//            while (userNumGuess != randomNum()) {
+//                if (userNumGuess < randomNum()) {
+//                    System.out.println("HIGHER!");
+//                } else if (userNumGuess > randomNum()) {
+//                    System.out.println("LOWER!");
+//                } else {
+//                    System.out.println("Your guess is out of bounds! Please enter a number between 1 and 100.");
+//                }
+//            }
+
+//            return "You guessed the number correctly! Congrats!";
+//    }
+
+    public static void main(String[] args) {
+        System.out.println(userGuessNumber());
+    }
 
 }
