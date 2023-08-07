@@ -37,6 +37,12 @@ public class Input {
     }
 //    // .startsWith() is a String method that returns a boolean.
 
+//    //BONUS: ACCEPT PROMPT AS ARGUMENT
+public boolean yesNo(String prompt) {
+    System.out.println(prompt);
+    boolean isYes;
+    return isYes = this.getString().trim().toLowerCase().startsWith("y");
+}
 
 
 //    public int getInt() {
@@ -55,7 +61,17 @@ public class Input {
         }
     }
 
-
+//    //BONUS: PROMPT AS ARGUMENT
+    public int getInt(String prompt) {
+        System.out.println(prompt);
+        try {
+            return Integer.parseInt(this.getString());
+        } catch (NumberFormatException e) {
+            System.out.println("You must enter a whole number.");
+//            // recursion! like a loop. will try to get the input again. and if it is able to be parsed, will return the number.
+            return this.getInt();
+        }
+    }
 //    public int getInt(int min, int max) {
 //        System.out.printf("Please enter an integer between %d and %d.%n", min, max);
 //        int userIntInput;
@@ -81,6 +97,17 @@ public class Input {
         }
     }
 
+//    //BONUS: PROMPT AS ARGUMENT
+public int getInt(String prompt, int min, int max){
+    System.out.println(prompt);
+    int userInt = this.getInt();
+    if (userInt >= min && userInt <= max) {
+        return userInt;
+    } else {
+        System.out.printf("The whole number must be between %d and %d. Please enter again.", min, max);
+        return getInt(min, max);
+    }
+}
 
 //    public double getDouble() {
 //        double userDoubleInput = scanner.nextDouble();
@@ -98,6 +125,17 @@ public class Input {
         }
     }
 
+//    //BONUS: PROMPT AS ARGUMENT
+public double getDouble(String prompt) {
+    System.out.println(prompt);
+    try {
+        return Double.parseDouble(this.getString());
+    } catch (NumberFormatException e) {
+        System.out.println("You must enter anumber.");
+//            // recursion! like a loop. will try to get the input again. and if it is able to be parsed, will return the number.
+        return this.getDouble();
+    }
+}
 
 //    public double getDouble(double minimum, double maximum) {
 //        System.out.printf("Please enter a number between %.2f and %.2f.%n", minimum, maximum);
@@ -125,7 +163,17 @@ public double getDouble(double min, double max){
     }
 }
 
-
+//      // BONUS: PROMPT AS ARGUMENT
+public double getDouble(String prompt,double min, double max){
+    System.out.println(prompt);
+    double userDouble = this.getDouble();
+    if (userDouble >= min && userDouble <= max) {
+        return userDouble;
+    } else {
+        System.out.printf("The whole number must be between %d and %d. Please enter again.", min, max);
+        return getDouble(min, max);
+    }
+}
 }
 
 
