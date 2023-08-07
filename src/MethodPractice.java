@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class MethodPractice {
 
     /*
@@ -332,88 +330,129 @@ public class MethodPractice {
 //        return result;
 //    }
 
-//    // EXERCISE 4
-//    // DICE ROLLING
-//    // Ask user for number of sides on dice
-//    // Roll 2 of those dice
-//    //static methods to choose random number within range (Math.random)
+    // EXERCISE 4
+    // DICE ROLLING
+    // Ask user for number of sides on dice
+    // Roll 2 of those dice
+    //static methods to choose random number within range (Math.random)
 
-//public static int askUserForNumber(){
+//// // Create new method to ask the user for the number of sides they want on the die
+////    //set it to return an integer
+//    public static int askUserForNumber(){
+////        // Ask user how many sides to the die they want
 //    System.out.println("Please type in the number of sides you want on your dice.");
+////    // Create new scanner to find the user input
 //    Scanner scanForNum = new Scanner(System.in);
+////    // Create variable to store the user input integer
 //   int userNum = scanForNum.nextInt();
+////   // has to return int data type, so return the stored user input.
 //    return userNum;
 //}
 //
+//// // create new method to choose two random numbers to simulate rolling two die
+////    // return string data type to let user know what they rolled
 //public static String chooseRandomNum(){
+////        // Minimum amount of sides to the die is set to 1
 //    int min = 1;
+////    // set the max amount of sides of the die to what the user input was
 //    int max = askUserForNumber();
+////    // randomly roll die with math.random and store into variable
 //    int die1 = (int) (Math.random() * (max - min) + 1) +min;
+////    // randomly roll the second die with math.random and store in variable
 //    int die2 = (int) (Math.random() * (max - min) + 1) +min;
+////    // Print out what the user rolled on both die
 //    System.out.printf("You rolled:%d%nYou rolled:%d%n",die1, die2);
+////    // method requires a string to be returned.
 //    return "Done rolling!";
 //}
 //
+//// // Create psvm method to call roll the die!
 //    public static void main(String[] args) {
 //        System.out.println(chooseRandomNum());
 //    }
 
-//    //EXERCISE 5
-//    high low number guessing game
-    public static int randomNum(){
-    int randomNumber = (int) (Math.random() * (100 - 1) + 1) + 1;
-    return randomNumber;
-    }
-    public static String getUserConfirm(){
-        Scanner scanConfirm = new Scanner(System.in);
-        System.out.println("You wanna play a game?[y/n]");
-        String userConfirmPlay = scanConfirm.nextLine();
-        return userConfirmPlay;
-    }
-
-    public static String userGuessNumber() {
-        if (getUserConfirm().equalsIgnoreCase("y")) {
-            int randomNumber = randomNum();
-            System.out.println(randomNumber);
-            System.out.println("You get 10 guesses! Guess a number between 1 and 100.");
-            Scanner scanForNum = new Scanner(System.in);
-            int userNumGuess = scanForNum.nextInt();;
-            int userGuesses = 0;
-           do {
-                if(userNumGuess < randomNumber){
-                    userGuesses++;
-                    System.out.println("HIGHER!");
-                    userNumGuess = scanForNum.nextInt();
-                } else if (userNumGuess > randomNumber) {
-                    userGuesses++;
-                    System.out.println("LOWER!");
-                    userNumGuess = scanForNum.nextInt();
-                } else if(userNumGuess == randomNumber){
-                    System.out.println("Congrats! You guessed the number correctly! :D");
-                    userNumGuess = scanForNum.nextInt();
-                } else {
-                    return "You ran out of guesses!):";
-                }
-            }
-               while(userNumGuess != randomNumber && userGuesses <= 10);
-        } return "Thanks for playing!";
-    }
-
-//            while (userNumGuess != randomNum()) {
-//                if (userNumGuess < randomNum()) {
+////    //EXERCISE 5
+////    high low number guessing game
+//
+////    //Declare random num method, set data type to return an int
+//    public static int randomNum(){
+////        // Create random num variable to equal math.random method. Set bounds from 1 to 100
+//    int randomNumber = (int) (Math.random() * (100 - 1) + 1) + 1;
+////    // Has to return int data type, so return randomNumber value.
+//    return randomNumber;
+//    }
+//
+////    // Confirm user wants to play the game method. Set data type to return a string
+//    public static String getUserConfirm(){
+////        // Create new scanner to look for users confirmation they want to play the game
+//        Scanner scanConfirm = new Scanner(System.in);
+////        // Ask user if they want to play game
+//        System.out.println("You wanna play a game?[y/n]");
+////        // Use scanner to find user answer if they want to play game and store into variable
+//        String userConfirmPlay = scanConfirm.nextLine();
+////        // Method needs to return a string, so return userConfirmPlay
+//        return userConfirmPlay;
+//    }
+//
+////    // create users number guess method, make method return a string
+//    public static String userGuessNumber() {
+////        // create conditional to check getUserConfirm return statement, and if "y" run this code:
+//        if (getUserConfirm().equalsIgnoreCase("y")) {
+////            // call and store the randomNum() method into an int data type.
+//            int randomNumber = randomNum();
+////            // For checking purposes, print the random number that is stored.
+////            // Comment out when playing game!
+//            System.out.println(randomNumber);
+////            // Print info about the game for the user.
+////            // 10 guesses and a number between 1-100.
+//            System.out.println("You get 10 guesses! Guess a number between 1 and 100.");
+////            // Create new scanner to scan for user guesses
+//            Scanner scanForNum = new Scanner(System.in);
+////            // and store into variable to call when going thru loop
+//            int userNumGuess = scanForNum.nextInt();
+////            // Create a user guess count to check how many times user has guessed. Set to 0 and increment thru loop.
+//            int userGuesses = 0;
+////            // create do while loop, runs once when user confirms "y"
+//           do {
+////               // conditional in case userNumGuess is less than the randomNumber then do this:
+//                if(userNumGuess < randomNumber){
+////                    // increment userGuesses by 1
+//                    userGuesses++;
+////                    // Let the user know they need to guess higher.
 //                    System.out.println("HIGHER!");
-//                } else if (userNumGuess > randomNum()) {
+////                    // Scan for the next guess of the user after giving the user the hint.
+//                    userNumGuess = scanForNum.nextInt();
+////                    // conditional in case userNumGuess is more than the randomNumber then do this:
+//                } else if (userNumGuess > randomNumber) {
+////                    // increment userGuesses by 1.
+//                    userGuesses++;
+////                    // Give the user the hint that they need to guess lower.
 //                    System.out.println("LOWER!");
+////                    // Scan for the next guess the user makes.
+//                    userNumGuess = scanForNum.nextInt();
+////                    // conditional if userNumGuess is the same as the random number!
+//                } else if(userNumGuess == randomNumber){
+////                    // Congratulate the user for guessing the right number!
+//                    System.out.println("Congrats! You guessed the number correctly! :D");
+////                    // Otherwise,
 //                } else {
-//                    System.out.println("Your guess is out of bounds! Please enter a number between 1 and 100.");
+////                    // The only other option for this game is if the user runs out of guesses, so return the reason why user lost.
+//                    return "You ran out of guesses!):";
 //                }
 //            }
-
-//            return "You guessed the number correctly! Congrats!";
+////           // create while conditional, that if the userNumGuess is not the same as the randomNumber
+////           // AND the amount of userGuesses is less than or equal to 10,
+////           // (Guess count starts at 0, not 1. 10-1 = 9)
+////           // Continue the code within the DO loop!
+//               while(userNumGuess != randomNumber && userGuesses < 9);
+////               // Thank the user for playing (:
+//        } return "Thanks for playing!";
 //    }
-
-    public static void main(String[] args) {
-        System.out.println(userGuessNumber());
-    }
+//
+//// // Create psvm method to test userGuessNumber method.
+//    public static void main(String[] args) {
+////        //Sout it outtttt
+//        System.out.println(userGuessNumber());
+//    }
 
 }
