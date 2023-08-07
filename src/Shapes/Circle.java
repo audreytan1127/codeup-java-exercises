@@ -26,7 +26,7 @@ public class Circle {
     public double getArea(){
 //        // store area in double data type called area
 //        // set it equal to pi * r^2
-        double area = PI * (radius * radius);
+        double area = PI * (this.radius * this.radius);
 //        // return the stored double value
         return area;
     }
@@ -36,7 +36,7 @@ public class Circle {
     public double getCircumference(){
 //        // store circumference in double data type called circumference
 //        // set it equal to 2*pi*r
-        double circumference = 2 * PI * radius;
+        double circumference = 2 * PI * this.radius;
 //        // method needs to return double, so return variable circumference.
         return circumference;
     }
