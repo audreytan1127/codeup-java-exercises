@@ -10,11 +10,11 @@ public class Input {
         scanner = new Scanner(System.in);
     }
 
-    String getString() {
+    public String getString() {
         return scanner.nextLine();
     }
 
-    boolean yesNo() {
+    public boolean yesNo() {
         String userInput = scanner.nextLine();
         if (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")) {
             System.out.println("Yes");
@@ -27,7 +27,7 @@ public class Input {
 
 
 
-    int getInt(int min, int max) {
+    public int getInt(int min, int max) {
         System.out.printf("Please enter an integer between %d and %d.%n", min, max);
         int userIntInput;
             userIntInput = scanner.nextInt();
@@ -42,16 +42,16 @@ public class Input {
         }
     }
 
-    int getInt() {
+    public int getInt() {
         int userIntInput = scanner.nextInt();
         return userIntInput;
     }
 
-    double getDouble(double minimum, double maximum) {
+    public double getDouble(double minimum, double maximum) {
         System.out.printf("Please enter a number between %.2f and %.2f.%n", minimum, maximum);
         double userInput;
         userInput = scanner.nextDouble();
-        if (userInput >=  minimum && userInput <= maximum) {
+        if(userInput >=  minimum && userInput <= maximum) {
             return userInput;
         } else {
             while(userInput < minimum || userInput > maximum) {
@@ -62,7 +62,7 @@ public class Input {
         }
     }
 
-    double getDouble() {
+    public double getDouble() {
         double userDoubleInput = scanner.nextDouble();
         return userDoubleInput;
     }
