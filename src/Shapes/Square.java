@@ -7,15 +7,6 @@ public class Square extends Rectangle{
         this.side = side;
     }
 
-public double getArea(double side){
-        double area = side * side;
-        return area;
-}
-
-public double getPerimeter(double side){
-        double perimeter = 4 * side;
-        return perimeter;
-}
 
 
 }
