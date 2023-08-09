@@ -20,13 +20,17 @@ public class Student {
         this.grades.add(grade);
         return grade;
     }
+
+    public ArrayList<Integer>getGrades(){
+        return grades;
+    }
     // returns the average of the students grades
     public double getGradeAverage() {
         int sumOfGrades = 0;
         for (Integer grade : grades) {
             sumOfGrades += grade;
         }
-        int averageGrade = sumOfGrades / grades.size();
+        double averageGrade = (double) sumOfGrades / grades.size();
         return averageGrade;
     }
     public String toString(){

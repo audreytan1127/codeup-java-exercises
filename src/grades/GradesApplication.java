@@ -2,12 +2,12 @@ package grades;
 
 import util.Input;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GradesApplication {
 
-    public static void main(String[] args) {
-
+    public static void execute(){
         HashMap<String, Student> students = new HashMap<>();
 
         Student student1 = new Student("Jethica");
@@ -52,8 +52,9 @@ public class GradesApplication {
                 String userSearchInput = userInput.getString("\nWhat student would you like to see more info on?\n");
                 if(students.containsKey(userSearchInput)){
                     Student studentName = students.get(userSearchInput);
+                    ArrayList<Integer> studentGrades = studentName.getGrades();
                     double studentGradeAvg = studentName.getGradeAverage();
-                    System.out.printf("Name: %s - GitHub Username: %s%nGrades:%dCurrent Grade Average: %.2f", studentName, userSearchInput, studentGradeAvg);
+                    System.out.printf("Name: %s - GitHub Username: %s%nGrades:%s%nCurrent Grade Average: %.2f", studentName, userSearchInput, studentGrades, studentGradeAvg);
                     userConfirm = userInput.yesNo("\nWould you like to see another student?");
                 } else {
                     System.out.printf("Sorry, no student found with GitHub username: %s", userSearchInput);
@@ -63,6 +64,10 @@ public class GradesApplication {
         } while (userConfirm);
 
         System.out.println("Goodbye and have a wonderful day!");
+    }
+
+    public static void main(String[] args) {
+     execute();
 
     }
 }
