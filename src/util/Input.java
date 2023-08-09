@@ -119,7 +119,7 @@ public int getInt(String prompt, int min, int max){
         try {
             return Double.parseDouble(this.getString());
         } catch (NumberFormatException e) {
-            System.out.println("You must enter anumber.");
+            System.out.println("You must enter a number.");
 //            // recursion! like a loop. will try to get the input again. and if it is able to be parsed, will return the number.
             return this.getDouble();
         }
