@@ -20,13 +20,15 @@ public class Square extends Quadrilateral {
     }
 
     @Override
-    public void setLength(double length) {
-        this.side = side;
+    public void setLength(double side) {
+        this.length = side;
+        this.width = side;
     }
 
     @Override
-    public void setWidth(double width) {
-        this.side = side;
+    public void setWidth(double side) {
+        this.width = side;
+        this.length = side;
     }
 //    public Square(double side) {
 //        super(side, side);
