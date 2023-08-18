@@ -28,11 +28,9 @@ Use Thread.sleep() to create a program that will take in a string of input and d
         try{
             int divisionOfInt = int1 / int2;
             System.out.println(divisionOfInt);
-        } catch(ArithmeticException e){
-            if(int2 == 0){
-                System.out.println("Cannot divide by 0!");
+        } catch(IllegalArgumentException e){
+                throw new IllegalArgumentException("Cannot divide by 0!", e);
             }
-        }
     }
 
     public static void delayedHello(int milliseconds){
@@ -47,6 +45,6 @@ Use Thread.sleep() to create a program that will take in a string of input and d
     public static void main(String[] args) {
         divideNums(5,0);
         divideNums(4,2);
-        delayedHello(1000);
+        delayedHello(1000 );
     }
 }
